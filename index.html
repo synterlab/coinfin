@@ -44,7 +44,7 @@ body{font-family:var(--font-ui);color:var(--pearl);touch-action:none;user-select
 .screen.active{opacity:1;pointer-events:all}
 
 /* ── HOME ── */
-#home{justify-content:flex-end;padding-bottom:calc(56px + var(--safe-bottom))}
+#home{justify-content:flex-end;padding-bottom:calc(98px + var(--safe-bottom));gap:9px}
 .home-logo-area{position:absolute;top:50%;left:50%;transform:translate(-50%,-62%);text-align:center}
 .home-logo{font-family:var(--font-d);font-size:clamp(3rem,15vw,7rem);font-weight:900;letter-spacing:0.15em;background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 50%,#c8a400 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 35px rgba(245,200,66,0.35));animation:float 4.5s ease-in-out infinite}
 .home-tag{font-size:clamp(0.6rem,2.5vw,0.82rem);letter-spacing:0.5em;text-transform:uppercase;color:var(--cyan);opacity:0.75;margin-top:8px;animation:float 4.5s ease-in-out infinite 0.6s}
@@ -175,6 +175,75 @@ body{font-family:var(--font-ui);color:var(--pearl);touch-action:none;user-select
 @keyframes rOut{0%{width:0;height:0;opacity:0.8;margin:-0px}100%{width:90px;height:90px;opacity:0;margin:-45px}}
 .burst{position:fixed;border-radius:50%;pointer-events:none;animation:bOut 0.65s ease-out forwards}
 @keyframes bOut{0%{opacity:1;transform:scale(1) translate(0,0)}100%{opacity:0;transform:scale(0) translate(var(--dx),var(--dy))}}
+
+/* ── BETA BADGE ── */
+.home-beta{display:inline-flex;align-items:center;gap:5px;font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;padding:4px 11px;border-radius:20px;background:linear-gradient(135deg,rgba(0,212,216,0.16),rgba(0,184,200,0.07));border:1px solid rgba(0,212,216,0.3);color:var(--cyan);margin-top:11px;font-weight:600}
+.home-beta::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--cyan);animation:betaPulse 1.8s ease-in-out infinite}
+@keyframes betaPulse{0%,100%{opacity:0.4;transform:scale(0.8)}50%{opacity:1;transform:scale(1)}}
+
+/* ── LOGIN BTN ── */
+#home-login{position:absolute;top:calc(var(--safe-top)+14px);right:14px;z-index:15;padding:7px 16px;border-radius:20px;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);color:rgba(255,255,255,0.65);font-family:var(--font-ui);font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:6px}
+#home-login:active{transform:scale(0.95)}
+#home-login:hover{border-color:rgba(0,212,216,0.38);color:var(--cyan)}
+#home-login svg{opacity:0.65;transition:opacity 0.2s}
+#home-login:hover svg{opacity:1}
+
+/* ── SECONDARY BTNS ROW ── */
+.home-btns-sec{display:flex;gap:9px;width:min(270px,78vw);margin-top:2px}
+.btn-sm{flex:1;padding:10px 8px;border-radius:13px;border:1px solid var(--glass-border);background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:rgba(255,255,255,0.58);font-family:var(--font-ui);font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.22s;position:relative;overflow:hidden}
+.btn-sm::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.08),transparent);opacity:0;transition:opacity 0.2s}
+.btn-sm:hover::after{opacity:1}
+.btn-sm:hover{border-color:rgba(0,212,216,0.3);color:rgba(127,240,245,0.85)}
+.btn-sm:active{transform:scale(0.96)}
+
+/* ── HOME FOOTER ── */
+.home-footer{position:absolute;bottom:0;left:0;right:0;padding-bottom:calc(12px + var(--safe-bottom));display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:all}
+.home-footer a{display:block;opacity:0.75;transition:opacity 0.2s}
+.home-footer a:hover{opacity:1}
+
+/* ── MODAL OVERLAY ── */
+.modal-overlay{position:fixed;inset:0;z-index:200;display:flex;align-items:flex-end;justify-content:center;background:rgba(2,12,27,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:opacity 0.32s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-sheet{position:relative;width:100%;max-width:480px;background:linear-gradient(180deg,rgba(6,22,52,0.99),rgba(2,12,27,0.99));border:1px solid rgba(255,255,255,0.1);border-bottom:none;border-radius:24px 24px 0 0;padding:22px 20px calc(var(--safe-bottom)+26px);transform:translateY(50px);transition:transform 0.42s cubic-bezier(0.16,1,0.3,1);max-height:88vh;overflow-y:auto}
+.modal-overlay.open .modal-sheet{transform:translateY(0)}
+.modal-drag{width:38px;height:4px;background:rgba(255,255,255,0.16);border-radius:2px;margin:0 auto 18px}
+.modal-title{font-family:var(--font-d);font-size:1.1rem;font-weight:700;color:var(--gold);letter-spacing:0.2em;margin-bottom:16px;text-align:center}
+.modal-close{position:absolute;top:18px;right:16px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid var(--glass-border);color:rgba(255,255,255,0.45);font-size:0.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;line-height:1}
+.modal-close:hover{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8)}
+
+/* ── ABOUT CONTENT ── */
+.about-logo{font-family:var(--font-d);font-size:2rem;font-weight:900;letter-spacing:0.15em;background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center;margin-bottom:4px}
+.about-tag{font-size:0.6rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--cyan);opacity:0.65;text-align:center;margin-bottom:16px}
+.about-desc{font-size:0.84rem;line-height:1.75;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:20px}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:18px}
+.ab-stat{background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:13px 8px;text-align:center}
+.ab-val{font-family:var(--font-d);font-size:1.25rem;font-weight:700;color:var(--aqua)}
+.ab-lbl{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px}
+.about-version{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.2);text-align:center;margin-top:6px}
+.about-links{display:flex;gap:9px;margin-bottom:18px}
+.about-link{flex:1;padding:10px;border-radius:11px;background:var(--glass);border:1px solid var(--glass-border);color:rgba(255,255,255,0.5);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;text-align:center;cursor:pointer;text-decoration:none;transition:all 0.2s;display:block}
+.about-link:hover{border-color:rgba(0,212,216,0.35);color:var(--cyan)}
+
+/* ── HOW TO PLAY ── */
+.htp-step{display:flex;align-items:flex-start;gap:13px;padding:13px 14px;background:var(--glass);border:1px solid var(--glass-border);border-radius:13px;margin-bottom:9px}
+.htp-num{width:28px;height:28px;min-width:28px;border-radius:50%;background:linear-gradient(135deg,rgba(0,212,216,0.28),rgba(0,184,200,0.14));border:1px solid rgba(0,212,216,0.38);color:var(--cyan);font-family:var(--font-d);font-size:0.8rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.htp-title{font-size:0.82rem;font-weight:600;color:var(--pearl);margin-bottom:4px}
+.htp-desc{font-size:0.72rem;line-height:1.55;color:rgba(255,255,255,0.48)}
+.htp-tip{background:linear-gradient(135deg,rgba(245,200,66,0.09),rgba(200,164,0,0.05));border:1px solid rgba(245,200,66,0.2);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:0.75rem;line-height:1.65;color:rgba(245,200,66,0.7)}
+.htp-tip strong{color:var(--gold);font-weight:600}
+
+/* ── LOGIN ── */
+.login-sub{font-size:0.72rem;color:rgba(255,255,255,0.35);letter-spacing:0.06em;text-align:center;margin-top:-10px;margin-bottom:20px;line-height:1.5}
+.login-input{width:100%;padding:13px 16px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.13);color:var(--pearl);font-family:var(--font-ui);font-size:0.88rem;outline:none;transition:border-color 0.2s;margin-bottom:10px;-webkit-appearance:none;display:block}
+.login-input:focus{border-color:rgba(0,212,216,0.5)}
+.login-input::placeholder{color:rgba(255,255,255,0.22)}
+.btn-login-submit{width:100%;padding:13px;border-radius:12px;background:linear-gradient(135deg,rgba(0,212,216,0.32),rgba(0,184,200,0.16));border:1px solid rgba(0,212,216,0.45);color:var(--cyan);font-family:var(--font-ui);font-size:0.88rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;margin-bottom:10px}
+.btn-login-submit:active{transform:scale(0.97)}
+.login-divider{display:flex;align-items:center;gap:12px;margin:12px 0;color:rgba(255,255,255,0.18);font-size:0.65rem;letter-spacing:0.12em}
+.login-divider::before,.login-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.09)}
+.btn-login-guest{width:100%;padding:11px;border-radius:12px;background:transparent;border:1px solid var(--glass-border);color:rgba(255,255,255,0.42);font-family:var(--font-ui);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+.btn-login-guest:active{transform:scale(0.97)}
+.login-notice{font-size:0.6rem;color:rgba(255,255,255,0.2);text-align:center;margin-top:14px;line-height:1.6}
 </style>
 </head>
 <body>
@@ -193,14 +262,28 @@ body{font-family:var(--font-ui);color:var(--pearl);touch-action:none;user-select
 
 <!-- HOME -->
 <div class="screen" id="home">
+  <button id="home-login">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    Login
+  </button>
   <div class="home-logo-area">
     <div class="home-logo">COINFIN</div>
     <div class="home-tag">Catch the Ecosystem</div>
+    <div class="home-beta">Beta</div>
   </div>
   <div class="home-btns">
     <button class="btn btn-primary" id="b-play">▶ Play</button>
     <button class="btn btn-gold" id="b-pedia">Fishpedia</button>
     <button class="btn" id="b-coll">Collection</button>
+  </div>
+  <div class="home-btns-sec">
+    <button class="btn-sm" id="b-htp">How to Play</button>
+    <button class="btn-sm" id="b-about">About</button>
+  </div>
+  <div class="home-footer">
+    <a href="https://orynth.dev/projects/coinfin" target="_blank" rel="noopener">
+      <img src="https://orynth.dev/api/badge/coinfin?theme=dark&style=default" alt="Featured on Orynth" width="200" height="62" style="display:block" loading="lazy" />
+    </a>
   </div>
 </div>
 
@@ -267,6 +350,90 @@ body{font-family:var(--font-ui);color:var(--pearl);touch-action:none;user-select
     <div class="pedia-hdr" style="margin-bottom:0">FISHPEDIA</div>
   </div>
   <div class="pedia-grid" id="pedia-grid"></div>
+</div>
+
+<!-- ABOUT MODAL -->
+<div class="modal-overlay" id="modal-about">
+  <div class="modal-sheet">
+    <div class="modal-drag"></div>
+    <button class="modal-close" id="about-close">✕</button>
+    <div class="about-logo">COINFIN</div>
+    <div class="about-tag">Catch the Ecosystem</div>
+    <p class="about-desc">A premium mobile-first browser fishing game where you explore five ocean zones, discover rare crypto-themed species, and build your collection — all in your browser, no download required.</p>
+    <div class="about-stats">
+      <div class="ab-stat"><div class="ab-val">5</div><div class="ab-lbl">Zones</div></div>
+      <div class="ab-stat"><div class="ab-val">20+</div><div class="ab-lbl">Species</div></div>
+      <div class="ab-stat"><div class="ab-val">∞</div><div class="ab-lbl">Depths</div></div>
+    </div>
+    <div class="about-links">
+      <a class="about-link" href="https://github.com/synterlab/coinfin" target="_blank" rel="noopener">GitHub</a>
+      <a class="about-link" href="https://orynth.dev/projects/coinfin" target="_blank" rel="noopener">Orynth</a>
+    </div>
+    <div class="about-version">Version 1.0 · Beta · Made with ♥ by Synterlab</div>
+  </div>
+</div>
+
+<!-- HOW TO PLAY MODAL -->
+<div class="modal-overlay" id="modal-htp">
+  <div class="modal-sheet">
+    <div class="modal-drag"></div>
+    <button class="modal-close" id="htp-close">✕</button>
+    <div class="modal-title">How to Play</div>
+    <div class="htp-step">
+      <div class="htp-num">1</div>
+      <div>
+        <div class="htp-title">Cast Your Line</div>
+        <div class="htp-desc">Tap anywhere on the water to cast. Your hook will sink to depth — the deeper it goes, the rarer the fish you might encounter.</div>
+      </div>
+    </div>
+    <div class="htp-step">
+      <div class="htp-num">2</div>
+      <div>
+        <div class="htp-title">Wait for a Bite</div>
+        <div class="htp-desc">Watch the ocean — fish will be attracted to your hook. Weather affects bite speed: storms bring faster, more aggressive bites.</div>
+      </div>
+    </div>
+    <div class="htp-step">
+      <div class="htp-num">3</div>
+      <div>
+        <div class="htp-title">Reel It In</div>
+        <div class="htp-desc">When you see STRIKE!, hold the Reel button to pull the fish up. Keep an eye on the Tension bar — if it hits 100% your line snaps!</div>
+      </div>
+    </div>
+    <div class="htp-step">
+      <div class="htp-num">4</div>
+      <div>
+        <div class="htp-title">Explore New Zones</div>
+        <div class="htp-desc">Level up by catching fish to unlock deeper ocean zones. Each zone has unique rare species — Crystal Waters, Twilight Depths, and beyond.</div>
+      </div>
+    </div>
+    <div class="htp-step">
+      <div class="htp-num">5</div>
+      <div>
+        <div class="htp-title">Build Your Collection</div>
+        <div class="htp-desc">Every catch is logged in your Collection and Fishpedia. Discover all species and track your progress across rarities: Common → Legendary.</div>
+      </div>
+    </div>
+    <div class="htp-tip">
+      <strong>Pro tip:</strong> During storms, rare fish appear much more frequently. Check the weather indicator and head to deeper zones for your best shot at Legendary catches.
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="modal-login">
+  <div class="modal-sheet">
+    <div class="modal-drag"></div>
+    <button class="modal-close" id="login-close">✕</button>
+    <div class="modal-title">Sign In</div>
+    <p class="login-sub">Save your progress and sync across devices.<br>Coming soon — accounts are in development.</p>
+    <input class="login-input" type="email" placeholder="Email address" autocomplete="email" />
+    <input class="login-input" type="password" placeholder="Password" autocomplete="current-password" />
+    <button class="btn-login-submit" onclick="document.getElementById('modal-login').classList.remove('open')">Continue →</button>
+    <div class="login-divider">or</div>
+    <button class="btn-login-guest" onclick="document.getElementById('modal-login').classList.remove('open')">Continue as Guest</button>
+    <p class="login-notice">Login is not yet functional — your progress is saved locally in this browser. Full accounts are coming in a future update.</p>
+  </div>
 </div>
 
 <!-- COLLECTION -->
@@ -777,6 +944,19 @@ document.getElementById('cl-back').addEventListener('click',goHome);
 document.getElementById('b-cont').addEventListener('click',()=>{resetFishing();goGame();});
 document.getElementById('b-zone-menu').addEventListener('click',openZoneMenu);
 document.getElementById('zm-close').addEventListener('click',closeZoneMenu);
+
+/* ── MODALS ── */
+function openModal(id){document.getElementById(id).classList.add('open');}
+function closeModal(id){document.getElementById(id).classList.remove('open');}
+document.getElementById('b-about').addEventListener('click',()=>openModal('modal-about'));
+document.getElementById('about-close').addEventListener('click',()=>closeModal('modal-about'));
+document.getElementById('modal-about').addEventListener('click',e=>{if(e.target===document.getElementById('modal-about'))closeModal('modal-about');});
+document.getElementById('b-htp').addEventListener('click',()=>openModal('modal-htp'));
+document.getElementById('htp-close').addEventListener('click',()=>closeModal('modal-htp'));
+document.getElementById('modal-htp').addEventListener('click',e=>{if(e.target===document.getElementById('modal-htp'))closeModal('modal-htp');});
+document.getElementById('home-login').addEventListener('click',()=>openModal('modal-login'));
+document.getElementById('login-close').addEventListener('click',()=>closeModal('modal-login'));
+document.getElementById('modal-login').addEventListener('click',e=>{if(e.target===document.getElementById('modal-login'))closeModal('modal-login');});
 
 /* ───────────────────────── BOOT ────────────────────────────────── */
 function boot(){

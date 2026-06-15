@@ -1,0 +1,107 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#020c1b"/>
+      <stop offset="60%" stop-color="#041429"/>
+      <stop offset="100%" stop-color="#062040"/>
+    </linearGradient>
+    <linearGradient id="logo-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe680"/>
+      <stop offset="50%" stop-color="#f5c842"/>
+      <stop offset="100%" stop-color="#c8a400"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#f5c842" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#020c1b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="45%" r="40%">
+      <stop offset="0%" stop-color="#00d4d8" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#020c1b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur-sm">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Subtle wave lines -->
+  <g opacity="0.07" stroke="#00d4d8" stroke-width="1" fill="none">
+    <path d="M0,320 Q200,300 400,320 Q600,340 800,320 Q1000,300 1200,320"/>
+    <path d="M0,350 Q200,330 400,350 Q600,370 800,350 Q1000,330 1200,350"/>
+    <path d="M0,380 Q200,360 400,380 Q600,400 800,380 Q1000,360 1200,380"/>
+    <path d="M0,290 Q200,270 400,290 Q600,310 800,290 Q1000,270 1200,290"/>
+  </g>
+
+  <!-- Decorative circles -->
+  <circle cx="150" cy="480" r="160" fill="none" stroke="#00d4d8" stroke-width="1" opacity="0.08"/>
+  <circle cx="150" cy="480" r="200" fill="none" stroke="#00d4d8" stroke-width="1" opacity="0.05"/>
+  <circle cx="1060" cy="160" r="130" fill="none" stroke="#f5c842" stroke-width="1" opacity="0.08"/>
+  <circle cx="1060" cy="160" r="170" fill="none" stroke="#f5c842" stroke-width="1" opacity="0.05"/>
+
+  <!-- Fish silhouettes -->
+  <!-- Fish 1 (golden, large) -->
+  <g transform="translate(160, 490) rotate(-15)" opacity="0.25">
+    <ellipse cx="0" cy="0" rx="55" ry="22" fill="#f5c842"/>
+    <polygon points="-55,0 -90,-25 -90,25" fill="#c8a400"/>
+    <ellipse cx="20" cy="-10" rx="18" ry="7" fill="#ffe680" opacity="0.5"/>
+    <circle cx="32" cy="-3" r="6" fill="#fff" opacity="0.9"/>
+    <circle cx="35" cy="-3" r="3" fill="#333"/>
+    <path d="M -8,-22 Q 10,-42 26,-22" fill="#f5c842" opacity="0.7"/>
+  </g>
+
+  <!-- Fish 2 (cyan, medium) -->
+  <g transform="translate(1050, 150) rotate(10)" opacity="0.22">
+    <ellipse cx="0" cy="0" rx="38" ry="15" fill="#00ccdd"/>
+    <polygon points="-38,0 -62,-17 -62,17" fill="#008899"/>
+    <circle cx="22" cy="-2" r="4" fill="#fff" opacity="0.9"/>
+    <circle cx="24" cy="-2" r="2" fill="#333"/>
+    <path d="M -5,-15 Q 8,-28 18,-15" fill="#00eeff" opacity="0.6"/>
+  </g>
+
+  <!-- Fish 3 (small, uncommon) -->
+  <g transform="translate(900, 530) rotate(-8)" opacity="0.18">
+    <ellipse cx="0" cy="0" rx="28" ry="11" fill="#4488cc"/>
+    <polygon points="-28,0 -46,-13 -46,13" fill="#2255aa"/>
+    <circle cx="17" cy="-2" r="3" fill="#fff" opacity="0.9"/>
+    <circle cx="19" cy="-2" r="2" fill="#333"/>
+  </g>
+
+  <!-- Main logo -->
+  <text x="600" y="255" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="900"
+    fill="url(#logo-g)" text-anchor="middle" letter-spacing="28"
+    filter="url(#blur-sm)" opacity="0.35">COINFIN</text>
+  <text x="600" y="255" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="900"
+    fill="url(#logo-g)" text-anchor="middle" letter-spacing="28">COINFIN</text>
+
+  <!-- Tagline -->
+  <text x="600" y="310" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="300"
+    fill="#7ef0f5" text-anchor="middle" letter-spacing="14" opacity="0.8">CATCH THE ECOSYSTEM</text>
+
+  <!-- Beta badge -->
+  <rect x="536" y="336" width="128" height="28" rx="14" fill="rgba(0,212,216,0.15)" stroke="rgba(0,212,216,0.4)" stroke-width="1"/>
+  <circle cx="554" cy="350" r="4" fill="#00d4d8"/>
+  <text x="600" y="356" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600"
+    fill="#00d4d8" text-anchor="middle" letter-spacing="6">BETA</text>
+
+  <!-- Feature pills -->
+  <g transform="translate(600, 420)">
+    <!-- Pill 1 -->
+    <rect x="-285" y="-18" width="170" height="36" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <text x="-200" y="6" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.65)" text-anchor="middle" letter-spacing="2">5 OCEAN ZONES</text>
+    <!-- Pill 2 -->
+    <rect x="-85" y="-18" width="170" height="36" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <text x="0" y="6" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.65)" text-anchor="middle" letter-spacing="2">20+ SPECIES</text>
+    <!-- Pill 3 -->
+    <rect x="115" y="-18" width="170" height="36" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <text x="200" y="6" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.65)" text-anchor="middle" letter-spacing="2">FREE TO PLAY</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="575" width="1200" height="55" fill="rgba(0,0,0,0.3)"/>
+  <text x="600" y="610" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14"
+    fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="3">synterlab.dev · A browser fishing game</text>
+</svg>

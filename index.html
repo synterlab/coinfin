@@ -6,9 +6,18 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="COINFIN — Catch the Ecosystem. A premium mobile fishing game.">
-<meta property="og:title" content="COINFIN">
-<meta property="og:description" content="Catch the Ecosystem — an immersive ocean fishing game.">
+<meta name="description" content="COINFIN — Catch the Ecosystem. A premium mobile-first browser fishing game. Discover 20+ species across 5 ocean zones.">
+<meta property="og:title" content="COINFIN — Catch the Ecosystem">
+<meta property="og:description" content="A premium browser fishing game. Explore 5 ocean zones, discover 20+ rare species, and build your collection. Free to play — no download needed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coinfin-git-main-sybterlab-s-projects.vercel.app/">
+<meta property="og:image" content="https://coinfin-git-main-sybterlab-s-projects.vercel.app/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="COINFIN — Catch the Ecosystem">
+<meta name="twitter:description" content="A premium browser fishing game. 5 zones, 20+ species. Free to play.">
+<meta name="twitter:image" content="https://coinfin-git-main-sybterlab-s-projects.vercel.app/og-image.svg">
 <title>COINFIN — Catch the Ecosystem</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
@@ -244,6 +253,35 @@ body{font-family:var(--font-ui);color:var(--pearl);touch-action:none;user-select
 .btn-login-guest{width:100%;padding:11px;border-radius:12px;background:transparent;border:1px solid var(--glass-border);color:rgba(255,255,255,0.42);font-family:var(--font-ui);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
 .btn-login-guest:active{transform:scale(0.97)}
 .login-notice{font-size:0.6rem;color:rgba(255,255,255,0.2);text-align:center;margin-top:14px;line-height:1.6}
+
+/* ── PROFILE VIEW ── */
+.profile-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,rgba(0,212,216,0.35),rgba(0,184,200,0.18));border:2px solid rgba(0,212,216,0.45);color:var(--cyan);font-family:var(--font-d);font-size:1.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.profile-username{font-family:var(--font-d);font-size:1.3rem;font-weight:700;color:var(--pearl);text-align:center;margin-bottom:4px;letter-spacing:0.1em}
+.profile-since{font-size:0.7rem;color:rgba(255,255,255,0.35);text-align:center;margin-bottom:22px;letter-spacing:0.05em}
+.profile-actions{display:flex;gap:9px}
+.profile-action-btn{flex:1;padding:12px;border-radius:12px;background:var(--glass);border:1px solid var(--glass-border);color:rgba(255,255,255,0.6);font-family:var(--font-ui);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+.profile-action-btn:active{transform:scale(0.97)}
+.profile-action-btn:hover{border-color:rgba(0,212,216,0.35);color:var(--cyan)}
+.profile-action-danger{color:rgba(255,100,100,0.65)!important}
+.profile-action-danger:hover{border-color:rgba(255,100,100,0.35)!important;color:rgba(255,120,120,0.9)!important}
+
+/* ── HUD USER ── */
+.hud-user{font-size:0.65rem;letter-spacing:0.12em;color:rgba(255,255,255,0.45);max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ── FIRST-RUN OVERLAY ── */
+#firstrun{position:fixed;inset:0;z-index:500;background:rgba(2,12,27,0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.4s}
+#firstrun.show{opacity:1;pointer-events:all}
+.firstrun-sheet{width:100%;max-width:480px;background:linear-gradient(180deg,rgba(6,22,52,0.99),rgba(2,12,27,0.99));border:1px solid rgba(255,255,255,0.1);border-bottom:none;border-radius:24px 24px 0 0;padding:28px 22px calc(var(--safe-bottom)+32px);text-align:center}
+.firstrun-icon{font-size:3rem;margin-bottom:12px}
+.firstrun-title{font-family:var(--font-d);font-size:1.4rem;font-weight:700;color:var(--gold);letter-spacing:0.18em;margin-bottom:8px}
+.firstrun-desc{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:22px}
+.firstrun-input{width:100%;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);color:var(--pearl);font-family:var(--font-ui);font-size:1rem;outline:none;transition:border-color 0.2s;margin-bottom:12px;-webkit-appearance:none;text-align:center}
+.firstrun-input:focus{border-color:rgba(0,212,216,0.55)}
+.firstrun-input::placeholder{color:rgba(255,255,255,0.28)}
+.firstrun-btn{width:100%;padding:14px;border-radius:13px;background:linear-gradient(135deg,rgba(245,200,66,0.32),rgba(200,164,0,0.18));border:1px solid rgba(245,200,66,0.5);color:var(--gold);font-family:var(--font-ui);font-size:0.95rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;margin-bottom:10px}
+.firstrun-btn:active{transform:scale(0.97)}
+.firstrun-skip{font-size:0.7rem;color:rgba(255,255,255,0.28);cursor:pointer;letter-spacing:0.08em;padding:8px;transition:color 0.2s}
+.firstrun-skip:hover{color:rgba(255,255,255,0.5)}
 </style>
 </head>
 <body>
@@ -259,6 +297,18 @@ body{font-family:var(--font-ui);color:var(--pearl);touch-action:none;user-select
 <canvas id="canvas"></canvas>
 <button id="mute" title="Toggle sound">🔊</button>
 <div id="timelbl"></div>
+
+<!-- FIRST-RUN WELCOME -->
+<div id="firstrun">
+  <div class="firstrun-sheet">
+    <div class="firstrun-icon">🎣</div>
+    <div class="firstrun-title">Welcome to COINFIN</div>
+    <p class="firstrun-desc">Enter your name so your progress, catches, and collection are saved in this browser. No account needed — it's all local.</p>
+    <input class="firstrun-input" id="firstrun-input" type="text" placeholder="Your angler name…" maxlength="24" autocomplete="off" autocorrect="off" spellcheck="false" />
+    <button class="firstrun-btn" id="firstrun-btn">Cast Off →</button>
+    <div class="firstrun-skip" id="firstrun-skip">Skip — play as Guest</div>
+  </div>
+</div>
 
 <!-- HOME -->
 <div class="screen" id="home">
@@ -293,6 +343,9 @@ body{font-family:var(--font-ui);color:var(--pearl);touch-action:none;user-select
     <div class="hud-pill">🪙 <span id="h-coins">0</span></div>
     <div class="hud-zone" id="h-zone">Sunlit Reef</div>
     <div class="hud-pill" id="b-zone-menu">⚓ <span id="h-level">1</span></div>
+  </div>
+  <div style="display:flex;justify-content:center;margin-top:4px">
+    <div class="hud-user" id="hud-username"></div>
   </div>
 </div>
 
@@ -425,14 +478,30 @@ body{font-family:var(--font-ui);color:var(--pearl);touch-action:none;user-select
   <div class="modal-sheet">
     <div class="modal-drag"></div>
     <button class="modal-close" id="login-close">✕</button>
-    <div class="modal-title">Sign In</div>
-    <p class="login-sub">Save your progress and sync across devices.<br>Coming soon — accounts are in development.</p>
-    <input class="login-input" type="email" placeholder="Email address" autocomplete="email" />
-    <input class="login-input" type="password" placeholder="Password" autocomplete="current-password" />
-    <button class="btn-login-submit" onclick="document.getElementById('modal-login').classList.remove('open')">Continue →</button>
-    <div class="login-divider">or</div>
-    <button class="btn-login-guest" onclick="document.getElementById('modal-login').classList.remove('open')">Continue as Guest</button>
-    <p class="login-notice">Login is not yet functional — your progress is saved locally in this browser. Full accounts are coming in a future update.</p>
+
+    <!-- View: no user logged in -->
+    <div id="login-view-new">
+      <div class="modal-title">Welcome, Fisher</div>
+      <p class="login-sub">Enter your name to save your progress and catch history in this browser.</p>
+      <input class="login-input" id="login-name-input" type="text" placeholder="Your name (e.g. CryptoAngler)" maxlength="24" autocomplete="off" autocorrect="off" spellcheck="false" />
+      <button class="btn-login-submit" id="btn-do-login">Start Fishing →</button>
+      <div class="login-divider">or</div>
+      <button class="btn-login-guest" id="btn-guest-login">Play as Guest</button>
+      <p class="login-notice">Progress is saved locally in your browser per name. No account or internet required.</p>
+    </div>
+
+    <!-- View: already logged in -->
+    <div id="login-view-profile" style="display:none">
+      <div class="profile-avatar" id="profile-avatar-letter">A</div>
+      <div class="profile-username" id="profile-display-name">Angler</div>
+      <div class="profile-since" id="profile-stats-line">Loading…</div>
+      <div class="profile-actions">
+        <button class="profile-action-btn" id="btn-switch-account">Switch Account</button>
+        <button class="profile-action-btn profile-action-danger" id="btn-logout">Sign Out</button>
+      </div>
+      <p class="login-notice" style="margin-top:14px">Switching accounts will load that account's saved progress.</p>
+    </div>
+
   </div>
 </div>
 
@@ -517,10 +586,66 @@ const FISH=[
     draw:(c,x,y,a,t,s)=>drawBodyFish(c,x,y,a,t,s,'#f5c842','#c8a400','#ffe680',45)},
 ];
 
+/* ───────────────────────── USER PROFILE ───────────────────────── */
+const CF_USER_KEY='cf_active_user';
+const CF_SAVE_PREFIX='cf_sv_';
+let currentUser=null;
+
+function getSaveKey(){return currentUser?CF_SAVE_PREFIX+currentUser.toLowerCase():'cf_sv_guest';}
+function freshSv(){return{level:1,xp:0,coins:0,total:0,caught:{},disc:[],zone:'sunlit',createdAt:Date.now()};}
+
+function doLogin(name){
+  name=(name||'').trim();
+  if(!name)return false;
+  currentUser=name;
+  localStorage.setItem(CF_USER_KEY,name);
+  loadSv();
+  updLoginBtn();
+  updHUD();
+  return true;
+}
+function doLogout(){
+  currentUser=null;
+  localStorage.removeItem(CF_USER_KEY);
+  sv=freshSv();
+  updLoginBtn();
+  updHUD();
+}
+function updLoginBtn(){
+  const btn=document.getElementById('home-login');
+  if(!btn)return;
+  if(currentUser){
+    const initials=currentUser.charAt(0).toUpperCase();
+    btn.innerHTML=`<span style="width:18px;height:18px;border-radius:50%;background:rgba(0,212,216,0.35);border:1px solid rgba(0,212,216,0.5);color:var(--cyan);font-size:0.58rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">${initials}</span>${currentUser.length>11?currentUser.substring(0,11)+'…':currentUser}`;
+  }else{
+    btn.innerHTML=`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Login`;
+  }
+}
+function updLoginModal(){
+  const hasUser=!!currentUser;
+  document.getElementById('login-view-new').style.display=hasUser?'none':'block';
+  document.getElementById('login-view-profile').style.display=hasUser?'block':'none';
+  if(hasUser){
+    document.getElementById('profile-avatar-letter').textContent=currentUser.charAt(0).toUpperCase();
+    document.getElementById('profile-display-name').textContent=currentUser;
+    const catches=sv.total||0;
+    const species=sv.disc?sv.disc.length:0;
+    document.getElementById('profile-stats-line').textContent=`${catches} catches · ${species} species · Level ${sv.level||1}`;
+  }else{
+    document.getElementById('login-name-input').value='';
+  }
+}
+function showFirstRun(){
+  const el=document.getElementById('firstrun');
+  el.classList.add('show');
+  setTimeout(()=>document.getElementById('firstrun-input').focus(),400);
+}
+function hideFirstRun(){document.getElementById('firstrun').classList.remove('show');}
+
 /* ───────────────────────── SAVE STATE ─────────────────────────── */
-let sv={level:1,xp:0,coins:0,total:0,caught:{},disc:[],zone:'sunlit'};
-function loadSv(){try{const d=localStorage.getItem('coinfin2');if(d)sv=JSON.parse(d);}catch(e){}}
-function saveSv(){try{localStorage.setItem('coinfin2',JSON.stringify(sv));}catch(e){}}
+let sv=freshSv();
+function loadSv(){try{const d=localStorage.getItem(getSaveKey());if(d)sv=JSON.parse(d);else sv=freshSv();}catch(e){sv=freshSv();}}
+function saveSv(){try{localStorage.setItem(getSaveKey(),JSON.stringify(sv));}catch(e){}}
 function xpNeeded(l){return 100*l;}
 function addXP(n){
   sv.xp+=n;let lvld=false;
@@ -831,6 +956,8 @@ function updHUD(){
   document.getElementById('h-coins').textContent=sv.coins;
   document.getElementById('h-level').textContent=sv.level;
   document.getElementById('h-zone').textContent=zone.name;
+  const uEl=document.getElementById('hud-username');
+  if(uEl)uEl.textContent=currentUser?('👤 '+currentUser):'';
   refreshXP();
 }
 function refreshXP(){const p=(sv.xp/xpNeeded(sv.level))*100;document.getElementById('xpfill').style.width=p+'%';}
@@ -946,7 +1073,10 @@ document.getElementById('b-zone-menu').addEventListener('click',openZoneMenu);
 document.getElementById('zm-close').addEventListener('click',closeZoneMenu);
 
 /* ── MODALS ── */
-function openModal(id){document.getElementById(id).classList.add('open');}
+function openModal(id){
+  if(id==='modal-login')updLoginModal();
+  document.getElementById(id).classList.add('open');
+}
 function closeModal(id){document.getElementById(id).classList.remove('open');}
 document.getElementById('b-about').addEventListener('click',()=>openModal('modal-about'));
 document.getElementById('about-close').addEventListener('click',()=>closeModal('modal-about'));
@@ -958,18 +1088,89 @@ document.getElementById('home-login').addEventListener('click',()=>openModal('mo
 document.getElementById('login-close').addEventListener('click',()=>closeModal('modal-login'));
 document.getElementById('modal-login').addEventListener('click',e=>{if(e.target===document.getElementById('modal-login'))closeModal('modal-login');});
 
+/* ── LOGIN ACTIONS ── */
+function handleLoginSubmit(){
+  const val=document.getElementById('login-name-input').value.trim();
+  if(!val){
+    const inp=document.getElementById('login-name-input');
+    inp.style.borderColor='rgba(255,80,80,0.6)';
+    inp.placeholder='Please enter a name…';
+    setTimeout(()=>{inp.style.borderColor='';inp.placeholder='Your name (e.g. CryptoAngler)';},1800);
+    return;
+  }
+  doLogin(val);
+  closeModal('modal-login');
+  showNotif('🎣 Welcome, '+val+'!');
+}
+document.getElementById('btn-do-login').addEventListener('click',handleLoginSubmit);
+document.getElementById('login-name-input').addEventListener('keydown',e=>{if(e.key==='Enter')handleLoginSubmit();});
+document.getElementById('btn-guest-login').addEventListener('click',()=>{
+  doLogout();
+  closeModal('modal-login');
+  showNotif('Playing as Guest — progress not saved per name');
+});
+document.getElementById('btn-logout').addEventListener('click',()=>{
+  doLogout();
+  closeModal('modal-login');
+  showNotif('Signed out');
+});
+document.getElementById('btn-switch-account').addEventListener('click',()=>{
+  document.getElementById('login-view-new').style.display='block';
+  document.getElementById('login-view-profile').style.display='none';
+  setTimeout(()=>document.getElementById('login-name-input').focus(),100);
+});
+
+/* ── FIRST-RUN ── */
+function handleFirstRunSubmit(){
+  const val=document.getElementById('firstrun-input').value.trim();
+  if(!val){
+    const inp=document.getElementById('firstrun-input');
+    inp.style.borderColor='rgba(255,80,80,0.6)';
+    inp.placeholder='Please enter a name…';
+    setTimeout(()=>{inp.style.borderColor='';inp.placeholder='Your angler name…';},1800);
+    return;
+  }
+  doLogin(val);
+  hideFirstRun();
+  showNotif('🎣 Welcome, '+val+'! Tap the water to cast.');
+}
+document.getElementById('firstrun-btn').addEventListener('click',handleFirstRunSubmit);
+document.getElementById('firstrun-input').addEventListener('keydown',e=>{if(e.key==='Enter')handleFirstRunSubmit();});
+document.getElementById('firstrun-skip').addEventListener('click',()=>{
+  hideFirstRun();
+  showNotif('Playing as Guest — tap water to cast!');
+});
+
 /* ───────────────────────── BOOT ────────────────────────────────── */
 function boot(){
-  loadSv();zone=ZONES.find(z=>z.id===sv.zone)||ZONES[0];
-  initParts();initBubs();initPlants();initAmbF();updHUD();
+  // restore saved user
+  const savedUser=localStorage.getItem(CF_USER_KEY);
+  if(savedUser){currentUser=savedUser;loadSv();}
+  else{sv=freshSv();}
+
+  zone=ZONES.find(z=>z.id===sv.zone)||ZONES[0];
+  initParts();initBubs();initPlants();initAmbF();
+  updLoginBtn();updHUD();
+
+  const TIPS=['Tap water to cast your line','Hold REEL when you see STRIKE!','Deeper zones = rarer fish','Level up to unlock new zones','Legendary fish glow in the dark…'];
+  let tipIdx=0;
+  const hintEl=document.getElementById('ld-hint');
+  const tipIv=setInterval(()=>{tipIdx=(tipIdx+1)%TIPS.length;if(hintEl)hintEl.textContent=TIPS[tipIdx];},700);
+
   let prog=0;const bar=document.getElementById('ld-bar');
   const iv=setInterval(()=>{prog+=Math.random()*12+6;bar.style.width=Math.min(prog,92)+'%';if(prog>=92)clearInterval(iv);},90);
   setTimeout(()=>{
+    clearInterval(tipIv);
     bar.style.width='100%';
     setTimeout(()=>{
       document.getElementById('loading').classList.add('out');
       showScr('home');gameOn=true;
       requestAnimationFrame(ts=>{lastT=ts;loop(ts);});
+      // show first-run only if brand new (no user & no any save data)
+      if(!savedUser){
+        const hasAnyData=Object.keys(localStorage).some(k=>k.startsWith(CF_SAVE_PREFIX));
+        if(!hasAnyData)setTimeout(showFirstRun,800);
+      }
     },420);
   },1700);
 }
